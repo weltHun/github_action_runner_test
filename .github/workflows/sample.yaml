@@ -1,0 +1,20 @@
+name: proto to openapi
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - id: 'checkout'
+        uses: 'actions/checkout@v3'
+      - id: make
+        shell: bash
+        run: |
+          make
+      - id: test
+        shell: bash
+        run: |
+          wget https://github.com/grpc-ecosystem/grpc-gateway/releases/download/v2.18.0/protoc-gen-openapiv2-v2.18.0-linux-x86_64
+          curl https://github.com/grpc-ecosystem/grpc-gateway/releases/download/v2.18.0/protoc-gen-openapiv2-v2.18.0-linux-x86_64
