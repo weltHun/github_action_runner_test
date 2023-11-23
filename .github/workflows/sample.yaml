@@ -16,7 +16,6 @@ jobs:
       - id: test
         shell: bash
         run: |
-          apt-get update
           apt-get install -y protobuf-compiler
           protoc --version
           wget https://github.com/grpc-ecosystem/grpc-gateway/releases/download/v2.18.0/protoc-gen-openapiv2-v2.18.0-linux-x86_64
